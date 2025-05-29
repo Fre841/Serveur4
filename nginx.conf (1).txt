@@ -1,0 +1,11 @@
+worker_processes auto;
+events {}
+stream {
+    upstream backend {
+        server 84.247.170.125:80;
+    }
+    server {
+        listen 8080;
+        proxy_pass backend;
+    }
+}
